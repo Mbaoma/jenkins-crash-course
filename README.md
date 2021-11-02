@@ -54,3 +54,47 @@ This repository contains an introduction to Jenkins.
 
 ## Using Jenkins CLI
 
+- Navigate to ```Manage Jenkins```, click on ```Configure security```
+![image](https://user-images.githubusercontent.com/49791498/139917805-a7b3d6a0-556b-4a6c-b4c7-166bfe251786.png)
+
+- Enable security
+![image](https://user-images.githubusercontent.com/49791498/139929260-50f4023b-8f2e-4dc0-8846-3ed806e939bb.png)
+
+- Click ```Apply``` and ```Save```.
+
+- In your browser, enter the following URL:
+
+```bash
+http://localhost:8080/cli/
+```
+
+*browser*
+![image](https://user-images.githubusercontent.com/49791498/139918661-f624d663-26cf-418d-9362-a12b64f557f0.png)
+
+- On your terminal, navigate to the location of the above file and run the following command
+
+```bash
+java -jar jenkins-cli.jar -s http://localhost:8080/ -webSocket help
+```
+
+## Running a Job using CLI
+
+- Get the ```build``` command, from the cli command page
+
+![image](https://user-images.githubusercontent.com/49791498/139933032-b9d75550-3a97-42a9-b2d6-a1c3b321e307.png)
+
+- Update the security options
+![image](https://user-images.githubusercontent.com/49791498/139917805-a7b3d6a0-556b-4a6c-b4c7-166bfe251786.png)
+
+- ![image](https://user-images.githubusercontent.com/49791498/139940145-68aa19e7-9c2d-43fe-9267-5fe530ce6808.png)
+Click ```Apply``` and ```save```.
+
+- To execute your job, run the following command
+
+```bash
+java -jar jenkins-cli.jar -s http://localhost:8080/ -webSocket build <job name> [-s] [-v]
+```
+
+![image](https://user-images.githubusercontent.com/49791498/139940707-3e44945e-6824-4f63-8f9d-ba350bbc6206.png)
+
+
