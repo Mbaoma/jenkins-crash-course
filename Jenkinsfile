@@ -5,10 +5,12 @@ pipeline {
             steps{
                 echo 'Min\'a, daijobu'
             }
-        stage('Welcome') {
+
+        stage('Bye') {
             steps{
                 echo 'Min\'a, daijobu'
             }
         }
     }
+}
 }
