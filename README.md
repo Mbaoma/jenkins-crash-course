@@ -97,4 +97,103 @@ java -jar jenkins-cli.jar -s http://localhost:8080/ -webSocket build <job name> 
 
 ![image](https://user-images.githubusercontent.com/49791498/139940707-3e44945e-6824-4f63-8f9d-ba350bbc6206.png)
 
+### Create,Manage and assign roles to Users
 
+#### Create User
+
+- Navigate to ```Manage Users``` from ```Manage Jenkins```.
+
+![image](https://user-images.githubusercontent.com/49791498/140314583-f66e41f9-938c-4e7c-a71c-929aab582c55.png)
+
+- Click on the ```Create User``` tab, fill the form and click on the ```Create User``` button.
+
+![image](https://user-images.githubusercontent.com/49791498/140315303-7e6b11ec-47f2-43bc-bddc-3b39f6c21262.png)
+
+#### Role Based Authorization Strategy
+
+- Navigate to ```manage plugins``` to install the RBAS plugin.
+![image](https://user-images.githubusercontent.com/49791498/140317593-547396d4-3a84-4ba5-b0b2-d6ad7c5001da.png)
+
+- Under the ```Available``` tab, search for ```Role-based authorization strategy```, check the box and install it without restarting Jenkins.
+
+- Select the ```Role based authorization```, under ```Configure Global Security```.
+![image](https://user-images.githubusercontent.com/49791498/140318743-498f7162-b29b-43f5-8cfc-375a6253846e.png)
+
+- Click ```apply``` and ```save```.
+
+#### Create and assign roles
+
+- Navigate to ```Manage and Assign roles```, select the task to be carried out.
+
+For this scenario, click on ```Manage roles```.
+
+![image](https://user-images.githubusercontent.com/49791498/140321191-f77bc562-6a36-462a-8bba-75644bd686e4.png)
+
+- Add a unique role.
+![image](https://user-images.githubusercontent.com/49791498/140322009-c1234660-eda9-4bd8-87c9-9a6a6659b677.png)
+
+- Specify permissions for this new role.
+
+Create as many roles as needed.
+
+- Navigate to ```Assign Roles```, create a user and assign them roles.
+
+![image](https://user-images.githubusercontent.com/49791498/140323934-f410c6ef-2a85-4770-bfb4-d232aaaea1ad.png)
+
+#### Testing the roles
+
+- Create ```freestyle jobs```.
+
+- Log in as any of the newly created users, observe the options available to the user.
+
+#### Building multiple jobs
+
+![image](https://user-images.githubusercontent.com/49791498/140332501-564ef023-27e2-4d3f-973e-1e28dbb7d4cf.png)
+
+## JenkinsFile and Jenkins Pipeline
+
+- Login to Jenkins
+- Install ```Pipeline``` plugin
+- Create a job of type ```Pipeline```
+![image](https://user-images.githubusercontent.com/49791498/140338617-018bd7e6-f29b-477a-acec-4a4be62a3c66.png)
+- Create Jenkinsfile, in ```Pipeline``` section.
+![image](https://user-images.githubusercontent.com/49791498/140355902-ad056d0c-765e-4527-9711-7b151ed6351f.png)
+
+- Fill in the following, in the textbox:
+
+```bash
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+```
+
+## Building pipelines using Version control files
+
+- Create a JenkinsFile, to contain
+
+```bash
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+```
+
+- Fill out the form
+![image](https://user-images.githubusercontent.com/49791498/140374725-3750d971-0495-4859-82eb-48d63e5804a5.png)
+
+- Push your Jenkinsfile to your GitHub repository.
