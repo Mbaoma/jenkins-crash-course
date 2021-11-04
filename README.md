@@ -197,3 +197,7 @@ pipeline {
 ![image](https://user-images.githubusercontent.com/49791498/140374725-3750d971-0495-4859-82eb-48d63e5804a5.png)
 
 - Push your Jenkinsfile to your GitHub repository.
+
+- Start a run.
+
+[This repository](https://github.com/Mbaoma/jenkins-flask-project) can be used as a guide to automating the process of starting jobs.
